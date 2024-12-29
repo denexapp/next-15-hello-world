@@ -1,9 +1,19 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import * as stylex from '@stylexjs/stylex';
+
+const styles2 = stylex.create({
+  testBlock: {
+    width: 200,
+    height: 200,
+    backgroundColor: 'red'
+  },
+});
 
 export default function Home() {
   return (
     <div className={styles.page}>
+      <div {...stylex.props(styles2.testBlock)} />
       <main className={styles.main}>
         <Image
           className={styles.logo}
